@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- App Widget -->
+    <color name="wg_list_item_title_text_color">#000000</color>
+    <color name="wg_list_item_source_date_color">#4d000000</color>
+    <color name="wg_empty_view_text_color">#80000000</color>
+    <color name="wg_refresh_bg_pressed">#26000000</color>
+    <color name="wg_page_index_text_color">#8051707c</color>
+    <color name="wg_list_view_divider_color">#26000000</color>
+    <color name="wg_bottom_divider_color">#19000000</color>
+
+</resources>

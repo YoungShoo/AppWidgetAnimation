@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/wg_bg">
+
+    <!-- list view / empty view -->
+
+    <FrameLayout
+        android:id="@+id/wg_list_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wg_empty_view_height"
+        android:layout_alignParentTop="true">
+
+        <include
+            layout="@layout/wg_empty_view" />
+
+        <RelativeLayout
+            android:id="@+id/wg_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <!-- divider -->
+
+    <ImageView
+        android:id="@+id/bottom_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wg_list_view_container"
+        android:background="@drawable/wg_divider"
+        android:layout_marginStart="@dimen/wg_padding_left_right"
+        android:layout_marginEnd="@dimen/wg_padding_left_right"/>
+
+    <!-- refresh layout-->
+
+    <FrameLayout
+        android:layout_width="@dimen/wg_title_height"
+        android:layout_height="@dimen/wg_title_height"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/bottom_divider">
+
+        <ProgressBar
+            android:id="@+id/wg_loading_view"
+            android:layout_width="@dimen/wg_title_refresh_width_height"
+            android:layout_height="@dimen/wg_title_refresh_width_height"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/wg_progressbar"
+            android:indeterminateDuration="@integer/wg_duration_loading_view"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/wg_refresh_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/wg_bg_refresh"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center"
+            android:src="@drawable/wg_ic_refresh" />
+
+    </FrameLayout>
+
+    <!-- switch button -->
+
+    <RelativeLayout
+        android:layout_width="@dimen/wg_title_switch_btn_container_width"
+        android:layout_height="@dimen/wg_title_height"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/bottom_divider">
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="@dimen/wg_title_height"
+            android:layout_height="@dimen/wg_title_height"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/wg_ic_next_disabled"/>
+
+        <TextView
+            android:id="@+id/tv_page_index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/black"
+            android:text="--" />
+
+        <ImageView
+            android:id="@+id/iv_prev"
+            android:layout_width="@dimen/wg_title_height"
+            android:layout_height="@dimen/wg_title_height"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/wg_ic_prev_disabled" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

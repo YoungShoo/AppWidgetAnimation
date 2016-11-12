@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppWidgetAnimation</string>
+
+    <!-- App Widget -->
+    <string name="wg_no_news_loaded">加载失败，点击重新加载</string>
+    <string name="wg_no_network_connected">加载失败，请检查网络设置</string>
+    <string name="wg_loading_please_wait">正在加载，请稍候</string>
+</resources>
