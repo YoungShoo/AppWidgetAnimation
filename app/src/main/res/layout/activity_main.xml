@@ -6,5 +6,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.shoo.demo.wganimation.MainActivity">
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hello World!" />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="@string/app_intro" />
 </RelativeLayout>
