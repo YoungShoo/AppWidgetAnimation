@@ -17,22 +17,16 @@
             </intent-filter>
         </activity>
 
-
         <!-- App Widget -->
         <receiver android:name=".appwidget.MyAppWidgetProvider">
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/wg_provider_info" />
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/wg_provider_info" />
 
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.shoo.demo.appwidget.REFRESH" />
-                <action android:name="com.shoo.demo.appwidget.SHOW_PREV_PAGE" />
-                <action android:name="com.shoo.demo.appwidget.SHOW_NEXT_PAGE" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".appwidget.AppWidgetDataService" />
+        <service android:name=".appwidget.AppWidgetManagerService" />
 
     </application>
 

@@ -15,7 +15,7 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by Shoo on 16-11-12.
+ * Created by Shoo on 15-12-30.
  */
 public class RxUtils {
 
@@ -107,6 +107,17 @@ public class RxUtils {
         return Schedulers.io().createWorker();
     }
 
+    /**
+     * 在当前线程执行任务
+     *
+     * @param action
+     * @param delay
+     * @param timeUnit
+     */
+    public static Subscription scheduleOnCurThread(Action0 action, long delay, TimeUnit timeUnit) {
+        return Schedulers.immediate().createWorker().schedule(action, delay, timeUnit);
+    }
+
     public static <T> Observable.Transformer<T, T> applyAsyncScheduler() {
         return new Observable.Transformer<T, T>() {
             @Override
@@ -132,6 +143,18 @@ public class RxUtils {
                                 return originList;
                             }
                         });
+            }
+        };
+    }
+
+    public static <T> Func1<List<T>, List<T>> takeListCount(final int count) {
+        return new Func1<List<T>, List<T>>() {
+            @Override
+            public List<T> call(List<T> list) {
+                if (list != null && list.size() > count) {
+                    return list.subList(0, count);
+                }
+                return list;
             }
         };
     }

@@ -18,6 +18,10 @@ public class ResourceUtils {
         return sContext.getString(resId);
     }
 
+    public static int getInteger(int id) {
+        return sContext.getResources().getInteger(id);
+    }
+
     public static String getPackageName() {
         return sContext.getPackageName();
     }

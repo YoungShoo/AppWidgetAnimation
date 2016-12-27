@@ -29,9 +29,7 @@ public class AppWidgetUtil {
      * @return
      */
     public static String getErrorMsg() {
-        if (AppWidgetDataManager.getInstance().isRefreshingData()) {
-            return getLoadingStr();
-        } else if (!isNetworkAvailable()) {
+        if (!isNetworkAvailable()) {
             return getNoNetworkString();
         } else {
             return getNoNewsString();
